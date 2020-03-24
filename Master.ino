@@ -10,17 +10,13 @@ int x;
 
 void setup(){
   x = 0;
-  //Initialize Serial Monitor
   Serial.begin(38400);
-  Serial.println("ENTER AT Commands:");
-  //Initialize Bluetooth Serial Port
-  hc06.begin(38400);
 }
 
 void loop(){
 
     DHT.read(dht_apin);
-    Serial.print(DHT.temperature); 
-    
+    Serial.write(DHT.temperature); 
+
     delay(2000);//Wait 2 seconds before accessing sensor again.
 }
